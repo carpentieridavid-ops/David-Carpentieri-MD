@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David F. Carpentieri, MD — Pathologist · Investigator · Inventor</title>
+<meta name="description" content="David F. Carpentieri, MD — Professor of Clinical Pathology, pediatric pathologist, translational researcher in vascular anomalies and biorepository science, and founder of Ven, LLC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EEEAE1;
+    --paper-alt: #E4DFD3;
+    --paper-deep: #DCD5C6;
+    --ink: #211B36;
+    --ink-soft: #4B4560;
+    --hema: #382C7E;
+    --hema-deep: #241A5E;
+    --eosin: #C4587A;
+    --eosin-deep: #9E3F5E;
+    --eosin-light: #ECC3D0;
+    --line: rgba(33,27,54,0.14);
+    --line-strong: rgba(33,27,54,0.28);
+    --max: 1120px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--eosin-light); color:var(--hema-deep);}
+  a{color:var(--hema); text-decoration:none;}
+  a:hover{color:var(--eosin-deep);}
+  .serif{font-family:'Source Serif 4', serif;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  img,svg{display:block; max-width:100%;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--hema);
+    outline-offset:3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(238,234,225,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .wordmark{
+    font-family:'Source Serif 4', serif;
+    font-weight:600; font-size:18px; letter-spacing:0.01em;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .wordmark em{font-style:italic; color:var(--eosin-deep);}
+  .navlinks{display:flex; gap:28px; list-style:none;}
+  .navlinks a{
+    font-size:13px; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:500;
+  }
+  .navlinks a:hover{color:var(--hema);}
+  .nav-toggle{display:none;}
+  @media (max-width:760px){
+    .navlinks{
+      position:fixed; inset:64px 0 auto 0; background:var(--paper);
+      flex-direction:column; gap:0; padding:8px 32px 20px;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-8px); opacity:0; pointer-events:none;
+      transition:transform .2s ease, opacity .2s ease;
+    }
+    .navlinks.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+    .navlinks li{border-top:1px solid var(--line);}
+    .navlinks a{display:block; padding:14px 0;}
+    .nav-toggle{
+      display:block; background:none; border:1px solid var(--line-strong);
+      border-radius:6px; width:38px; height:34px; position:relative; cursor:pointer;
+    }
+    .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+      content:''; position:absolute; left:9px; right:9px; height:2px; background:var(--ink);
+    }
+    .nav-toggle span{top:16px;}
+    .nav-toggle span::before{top:-6px;}
+    .nav-toggle span::after{top:6px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:88px 0 40px;}
+  .eyebrow{
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--eosin-deep); font-weight:500; margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--eosin-deep);}
+  h1.display{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:clamp(38px, 6vw, 68px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    max-width:16ch;
+    color:var(--ink);
+  }
+  h1.display .accent{color:var(--hema); font-style:italic; font-weight:500;}
+  .hero-sub{
+    max-width:640px; margin-top:22px; font-size:18px; color:var(--ink-soft);
+  }
+  .hero-meta{
+    margin-top:28px; display:flex; flex-wrap:wrap; gap:10px 28px;
+    font-size:13px; color:var(--ink-soft);
+  }
+  .hero-meta span{white-space:nowrap;}
+  .hero-meta strong{color:var(--ink); font-weight:600;}
+
+  /* signature svg banner */
+  .signature-band{margin-top:56px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .signature-band svg{width:100%; height:auto; display:block;}
+  .signature-caption{
+    display:flex; justify-content:space-between; padding:10px 0 0;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft);
+  }
+
+  /* stat chips */
+  .stats{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); margin-top:40px;
+  }
+  .stat{background:var(--paper); padding:22px 20px;}
+  .stat .num{font-family:'Source Serif 4',serif; font-size:30px; font-weight:600; color:var(--hema);}
+  .stat .label{margin-top:4px; font-size:12px; letter-spacing:0.03em; color:var(--ink-soft);}
+  @media (max-width:760px){ .stats{grid-template-columns:repeat(2,1fr);} }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:96px 0;}
+  section.alt{background:var(--paper-alt);}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head .tag{
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--eosin-deep); font-weight:500; margin-bottom:14px;
+  }
+  h2.display{
+    font-family:'Source Serif 4', serif; font-weight:600;
+    font-size:clamp(28px, 3.6vw, 40px); letter-spacing:-0.01em;
+  }
+  .section-head p{margin-top:14px; color:var(--ink-soft); font-size:16px;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:64px;}
+  .about-grid p + p{margin-top:16px;}
+  .about-grid p{color:var(--ink); font-size:16.5px;}
+  .about-grid .lede{font-family:'Source Serif 4',serif; font-size:22px; line-height:1.5; color:var(--hema-deep); font-weight:500;}
+  .portrait-frame{
+    border:1px solid var(--line-strong); padding:10px; background:var(--paper);
+    margin-bottom:28px;
+  }
+  section.alt .portrait-frame{background:var(--paper-alt);}
+  .portrait-frame img{width:100%; height:auto; display:block; filter:grayscale(0.15) contrast(1.03);}
+  .portrait-cap{
+    display:flex; justify-content:space-between; padding-top:10px;
+    font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .facts{border-top:1px solid var(--line-strong);}
+  .facts dt{
+    padding-top:18px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .facts dd{padding-bottom:18px; border-bottom:1px solid var(--line); font-size:14.5px; color:var(--ink); line-height:1.5;}
+  @media (max-width:820px){ .about-grid{grid-template-columns:1fr;} }
+
+  /* ---------- FOCUS CARDS ---------- */
+  .focus-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .focus-card{background:var(--paper); padding:34px 30px; display:flex; flex-direction:column; gap:14px;}
+  section.alt .focus-card{background:var(--paper-alt);}
+  .focus-card .fnum{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--eosin-deep);}
+  .focus-card h3{font-family:'Source Serif 4',serif; font-size:22px; font-weight:600; color:var(--ink);}
+  .focus-card p{font-size:14.5px; color:var(--ink-soft);}
+  .focus-card ul{margin-top:6px; padding-left:18px; font-size:13.5px; color:var(--ink-soft);}
+  .focus-card ul li{margin-bottom:4px;}
+  @media (max-width:900px){ .focus-grid{grid-template-columns:1fr;} }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative; padding-left:28px; border-left:2px solid var(--line-strong);}
+  .tl-item{position:relative; padding-bottom:36px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:''; position:absolute; left:-34px; top:4px; width:10px; height:10px;
+    border-radius:50%; background:var(--eosin); border:2px solid var(--paper);
+    box-shadow:0 0 0 2px var(--eosin);
+  }
+  .tl-item .yr{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--hema); font-weight:500;}
+  .tl-item h4{font-family:'Source Serif 4',serif; font-size:19px; font-weight:600; margin-top:4px;}
+  .tl-item .place{font-size:13.5px; color:var(--ink-soft); margin-top:2px;}
+
+  /* ---------- PUBLICATIONS ---------- */
+  .pub-tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px;}
+  .pub-tab{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; padding:8px 14px;
+    border:1px solid var(--line-strong); border-radius:20px; background:transparent;
+    cursor:pointer; color:var(--ink-soft);
+  }
+  .pub-tab.active{background:var(--hema); border-color:var(--hema); color:var(--paper);}
+  .pub-group{display:none;}
+  .pub-group.active{display:block;}
+  .pub-list{border-top:1px solid var(--line);}
+  .pub-item{padding:18px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:90px 1fr; gap:20px;}
+  .pub-item .py{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ink-soft); padding-top:2px;}
+  .pub-item .pt{font-size:15px; color:var(--ink); line-height:1.5;}
+  .pub-item .pt .authors{color:var(--ink-soft); font-size:13.5px; display:block; margin-top:3px;}
+  @media (max-width:600px){ .pub-item{grid-template-columns:1fr; gap:4px;} }
+  .pub-more{margin-top:26px; font-size:14px; color:var(--ink-soft);}
+
+  /* ---------- GRANTS / HONORS ---------- */
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+  @media (max-width:820px){ .split{grid-template-columns:1fr;} }
+  .grant-item{padding:16px 0; border-bottom:1px solid var(--line);}
+  .grant-item .gy{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--hema);}
+  .grant-item h5{font-size:15.5px; font-weight:600; margin-top:4px;}
+  .grant-item .role{font-size:13.5px; color:var(--ink-soft); margin-top:2px;}
+  .honor-item{padding:14px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:16px;}
+  .honor-item .hy{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--eosin-deep); white-space:nowrap;}
+
+  /* ---------- SERVICE ---------- */
+  .service-cols{display:grid; grid-template-columns:repeat(2,1fr); gap:12px 48px;}
+  @media (max-width:700px){ .service-cols{grid-template-columns:1fr;} }
+  .service-cols li{list-style:none; padding:10px 0; border-bottom:1px solid var(--line); font-size:14.5px;}
+  .service-cols li .sy{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft); margin-right:10px;}
+
+  /* ---------- QUOTE ---------- */
+  .quote-block{
+    border-left:3px solid var(--eosin); padding-left:28px; max-width:760px;
+  }
+  .quote-block p{font-family:'Source Serif 4',serif; font-style:italic; font-size:22px; line-height:1.55; color:var(--hema-deep);}
+  .quote-block cite{display:block; margin-top:14px; font-size:13px; color:var(--ink-soft); font-style:normal;}
+  .mentee-grid{margin-top:44px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:820px){ .mentee-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .mentee-grid{grid-template-columns:1fr;} }
+  .mentee{padding:16px 18px; border:1px solid var(--line); background:var(--paper);}
+  section.alt .mentee{background:var(--paper-alt);}
+  .mentee .name{font-weight:600; font-size:14.5px;}
+  .mentee .out{font-size:13px; color:var(--ink-soft); margin-top:4px;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{background:var(--hema-deep); color:var(--paper); padding:80px 0 40px;}
+  footer .wrap{display:grid; grid-template-columns:1.2fr 1fr; gap:60px;}
+  @media (max-width:820px){ footer .wrap{grid-template-columns:1fr; gap:40px;} }
+  footer h2.display{color:var(--paper);}
+  footer p{color:rgba(238,234,225,0.75); margin-top:14px; max-width:46ch;}
+  .contact-links{list-style:none; margin-top:26px;}
+  .contact-links li{padding:10px 0; border-bottom:1px solid rgba(238,234,225,0.18);}
+  .contact-links a{color:var(--paper); font-size:15px;}
+  .contact-links a:hover{color:var(--eosin-light);}
+  .contact-links .lbl{display:block; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(238,234,225,0.5); margin-bottom:3px;}
+  .foot-bottom{
+    margin-top:60px; padding-top:24px; border-top:1px solid rgba(238,234,225,0.18);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:12.5px; color:rgba(238,234,225,0.55);
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; margin-top:26px;
+    font-size:13px; letter-spacing:0.04em; text-transform:uppercase; font-weight:600;
+    color:var(--paper); background:var(--hema); padding:12px 22px; border:1px solid var(--hema);
+  }
+  .btn:hover{background:var(--eosin-deep); border-color:var(--eosin-deep); color:var(--paper);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="wordmark">David F. Carpentieri<em>, MD</em></div>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle"><span></span></button>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#focus">Focus</a></li>
+      <li><a href="#timeline">Career</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#grants">Grants &amp; Honors</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Phoenix, Arizona</p>
+      <h1 class="display">Pathology built on <span class="accent">rare cases</span> and the questions they leave behind.</h1>
+      <p class="hero-sub">David F. Carpentieri, MD is a pediatric and anatomic pathologist, translational researcher, and biobanking scientist whose thirty-year career runs from the microscope to the molecule — currently extending into Raman-spectroscopy diagnostics as founder of Ven, LLC.</p>
+      <div class="hero-meta">
+        <span>Professor of Clinical Pathology &amp; Child Health, <strong>University of Arizona College of Medicine – Phoenix</strong></span>
+        <span>Associate Professor, <strong>Mayo Clinic Alix School of Medicine – Scottsdale</strong></span>
+        <span>Associate Clinical Professor, <strong>Creighton University Medical Center</strong></span>
+      </div>
+
+      <div class="signature-band reveal">
+        <svg viewBox="0 0 1200 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration transitioning from a stained tissue section into a Raman spectral trace">
+          <defs>
+            <clipPath id="clipL"><rect x="0" y="0" width="600" height="220"/></clipPath>
+          </defs>
+          <rect x="0" y="0" width="1200" height="220" fill="none"/>
+          <!-- left: stained tissue swirls -->
+          <g clip-path="url(#clipL)" opacity="0.9">
+            <circle cx="60" cy="60" r="46" fill="var(--hema)" opacity="0.18"/>
+            <circle cx="150" cy="140" r="60" fill="var(--eosin)" opacity="0.22"/>
+            <circle cx="260" cy="50" r="34" fill="var(--hema)" opacity="0.28"/>
+            <circle cx="330" cy="150" r="50" fill="var(--eosin)" opacity="0.18"/>
+            <circle cx="420" cy="70" r="40" fill="var(--hema)" opacity="0.22"/>
+            <circle cx="480" cy="160" r="30" fill="var(--eosin)" opacity="0.26"/>
+            <circle cx="90" cy="180" r="22" fill="var(--hema)" opacity="0.2"/>
+            <circle cx="230" cy="180" r="16" fill="var(--hema-deep)" opacity="0.3"/>
+            <circle cx="360" cy="40" r="18" fill="var(--eosin-deep)" opacity="0.3"/>
+            <circle cx="520" cy="90" r="20" fill="var(--hema-deep)" opacity="0.25"/>
+          </g>
+          <!-- divider -->
+          <line x1="600" y1="0" x2="600" y2="220" stroke="var(--line-strong)" stroke-width="1"/>
+          <!-- right: raman spectral trace -->
+          <polyline points="610,170 640,168 660,169 675,120 685,60 695,120 705,166 730,164 745,110 752,40 759,110 775,163 800,160 815,90 822,20 829,90 845,158 870,155 895,153 905,95 912,30 919,95 930,150 960,148 985,146 995,100 1002,45 1009,100 1020,144 1060,141 1090,139 1120,137 1150,136 1190,135"
+            fill="none" stroke="var(--hema)" stroke-width="2.5" />
+          <line x1="605" y1="180" x2="1195" y2="180" stroke="var(--line-strong)" stroke-width="1"/>
+        </svg>
+        <div class="signature-caption wrap" style="padding-left:0;padding-right:0;">
+          <span>Fig. 1 — H&amp;E stained section</span>
+          <span>Raman spectral trace, SERS platform</span>
+        </div>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat"><div class="num">30+</div><div class="label">Years board-certified in Anatomic, Clinical &amp; Pediatric Pathology</div></div>
+        <div class="stat"><div class="num">90+</div><div class="label">Peer-reviewed publications, 1,650+ citations</div></div>
+        <div class="stat"><div class="num">5</div><div class="label">Academic appointments held since 2009</div></div>
+        <div class="stat"><div class="num">2</div><div class="label">Patents — pediatric oncology &amp; vascular anomaly diagnostics</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="reveal">
+          <p class="lede">Trained in São Paulo, Miami, and Philadelphia, and practicing in Phoenix for over two decades, Dr. Carpentieri has built a career at the intersection of diagnosis, translational research and invention.</p>
+          <p>He completed medical school at the Faculdade de Ciências Médicas da Santa Casa in São Paulo, trained in pediatrics at Jackson Memorial Hospital in Miami, and pursued pathology residency at The Lankenau Hospital before a fellowship in pediatric pathology at The Children's Hospital of Philadelphia. He is board-certified by the American Board of Pathology in both Anatomic &amp; Clinical Pathology and Pediatric Pathology.</p>
+          <p>Since 2002 he has served as Laboratory Co-Founder and Associate Pathologist at Phoenix Children's, where his roles have spanned laboratory directorship, biorepository medical direction, and section leadership across chemistry, immunology, microbiology, and point-of-care testing. In parallel, he holds academic appointments at the University of Arizona College of Medicine – Phoenix, Mayo Clinic Alix School of Medicine – Scottsdale, and Creighton University Medical Center, and has an intermittent consulting appointment in Dublin, Ireland.</p>
+          <p>His research has moved from rhabdomyosarcoma and Ewing sarcoma pathology, through pediatric biorepository science and dried-plasma-spot proteomics, to his current focus on the molecular and epigenetic drivers of vascular anomalies — and, through Spectrum, LLC and Ven, LLC, into Raman-spectroscopy-based diagnostic devices.</p>
+        </div>
+        <div class="reveal">
+          <div class="portrait-frame">
+            <img src="david-carpentieri.jpg" alt="David F. Carpentieri, MD, outdoors" loading="lazy">
+            <div class="portrait-cap">
+              <span>David F. Carpentieri, MD</span>
+              <span>Phoenix, Arizona</span>
+            </div>
+          </div>
+          <dl class="facts">
+            <dt>Board Certifications</dt>
+            <dd>American Board of Pathology — Anatomic &amp; Clinical Pathology (1997); Pediatric Pathology (1999). American Registry of Diagnostic Medical Sonographers (1990).</dd>
+            <dt>Licensure</dt>
+            <dd>Arizona (2002–present); Ireland (2013–present); prior licensure in Pennsylvania and New Jersey.</dd>
+            <dt>Languages &amp; Training Origin</dt>
+            <dd>Trained in Brazil, the United States, and clinical practice extended into Ireland.</dd>
+            <dt>Ventures</dt>
+            <dd>Founder &amp; CEO, Spectrum, LLC (2016–present) — pathology and Raman spectroscopy consulting. Founder, Ven, LLC — developing SPECTRA-TDM, a spectroscopic platform for therapeutic drug monitoring.</dd>
+            <dt>Recognition</dt>
+            <dd>Best Doctors in America (2010–2014, 2025); Best Doctors in Arizona (2025); Visiting Professor, Vascular Anomalies, Boston Children's Hospital (2025).</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section class="alt" id="focus">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="tag">Current Work</p>
+        <h2 class="display">Three threads, one throughline</h2>
+        <p>Clinical service, translational research, and diagnostic invention — each informing the others.</p>
+      </div>
+      <div class="focus-grid reveal">
+        <div class="focus-card">
+          <span class="fnum">01</span>
+          <h3>Clinical &amp; Laboratory Medicine</h3>
+          <p>Pediatric and anatomic pathology practice at Phoenix Children's since 2002, with laboratory and biorepository medical directorship spanning chemistry, immunology, microbiology, and point-of-care testing.</p>
+          <ul>
+            <li>Biorepository Medical Director, Phoenix Children's</li>
+            <li>Faculty, Fetal-Maternal Medicine Program, Creighton</li>
+            <li>Locum Tenens, Banner Health, Phoenix</li>
+          </ul>
+        </div>
+        <div class="focus-card">
+          <span class="fnum">02</span>
+          <h3>Vascular Anomalies &amp; Translational Genomics</h3>
+          <p>Research into KMT-family epigenetic mutations, PI3K/AKT/mTOR pathway crosstalk, and variant-allele-frequency interpretation in vascular lesion biology, alongside a pending patent on KMT pathway dysregulation detection.</p>
+          <ul>
+            <li>Pathology Committee, ISSVA (2024–present)</li>
+            <li>Pathology Committee, VSD-TRN (2023–present)</li>
+            <li>Visiting Professor, Boston Children's Hospital (2025)</li>
+          </ul>
+        </div>
+        <div class="focus-card">
+          <span class="fnum">03</span>
+          <h3>Spectrum, LLC &amp; Ven, LLC</h3>
+          <p>Applying Raman spectroscopy — the same optical physics behind decades of tissue and proteomic work — to point-of-care therapeutic drug monitoring, as founder and Principal Investigator of the SPECTRA-TDM platform.</p>
+          <ul>
+            <li>Founder &amp; CEO, Spectrum, LLC (2016–present)</li>
+            <li>Founder &amp; PI, Ven, LLC — SPECTRA-TDM</li>
+            <li>Wharton Entrepreneurship Acceleration Program (2026)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="tag">Career</p>
+        <h2 class="display">Academic appointments &amp; principal roles</h2>
+        <p>A selected timeline — full employment history spans over sixty positions across three decades.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="yr">2026</div>
+          <h4>Professor of Clinical Pathology &amp; Child Health</h4>
+          <div class="place">University of Arizona College of Medicine – Phoenix (Clinical Scholar track, promoted from Associate Professor)</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2023 – present</div>
+          <h4>Biorepository Medical Director</h4>
+          <div class="place">Phoenix Children's, Phoenix, Arizona</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2020 – present</div>
+          <h4>Associate Professor of Laboratory Medicine and Pathology</h4>
+          <div class="place">Mayo Clinic Alix School of Medicine – Scottsdale</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2018 – present</div>
+          <h4>Associate Clinical Professor</h4>
+          <div class="place">Creighton University Medical Center, Phoenix, Arizona</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2018 – 2022</div>
+          <h4>Laboratory Medical Director</h4>
+          <div class="place">Beacon Biomedical, Inc., Phoenix, Arizona</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2011 – present</div>
+          <h4>Assistant Professor, Clinician Scholar Track in Biorepository/Pathology</h4>
+          <div class="place">Barrow Neurological Institute, Phoenix, Arizona</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2013 – present</div>
+          <h4>Histopathology Consultant (intermittent)</h4>
+          <div class="place">Our Lady Children's &amp; Temple Street Children's University Hospital, Dublin, Ireland</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2002 – present</div>
+          <h4>Laboratory Co-Founder &amp; Associate Pathologist</h4>
+          <div class="place">Phoenix Children's, Phoenix, Arizona</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">1998 – 2001</div>
+          <h4>Assistant Pathologist</h4>
+          <div class="place">The Children's Hospital of Philadelphia, Philadelphia, Pennsylvania</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">1996 – 1998</div>
+          <h4>Fellowship, Pediatric Pathology</h4>
+          <div class="place">The Children's Hospital of Philadelphia, Philadelphia, Pennsylvania</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">1992 – 1996</div>
+          <h4>Residency, Anatomic &amp; Clinical Pathology</h4>
+          <div class="place">The Lankenau Hospital, Jefferson Health System, Wynnewood, Pennsylvania</div>
+        </div>
+        <div class="tl-item">
+          <div class="yr">1980 – 1985</div>
+          <h4>Medical School</h4>
+          <div class="place">Faculdade de Ciências Médicas da Santa Casa, São Paulo, Brazil</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="alt" id="publications">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="tag">Scholarship</p>
+        <h2 class="display">Selected publications</h2>
+        <p>Ninety-plus peer-reviewed articles across pediatric pathology, biorepository science, and vascular anomaly biology. Browse by theme, or view the complete record via ORCID.</p>
+      </div>
+
+      <div class="reveal">
+        <div class="pub-tabs" role="tablist" aria-label="Publication themes">
+          <button class="pub-tab active" data-tab="vasc">Vascular Anomalies &amp; Genomics</button>
+          <button class="pub-tab" data-tab="bio">Biorepository &amp; Proteomics</button>
+          <button class="pub-tab" data-tab="onco">Pediatric Pathology &amp; Oncology</button>
+          <button class="pub-tab" data-tab="spec">Spectroscopy &amp; Microfluidics</button>
+        </div>
+
+        <div class="pub-group active" id="pub-vasc">
+          <div class="pub-list">
+            <div class="pub-item"><div class="py">2026</div><div class="pt">Co-expression of histone lysine methyltransferases and PIK3CA mutations in vascular anomalies.<span class="authors">Robbins E, Nourani M, Kothari A, Schaefer C, Willard S, Harper P, Carpentieri D. Journal of Vascular Anomalies (submitted).</span></div></div>
+            <div class="pub-item"><div class="py">2023</div><div class="pt">A comparative analysis of RAS variants in patients with disorders of somatic mosaicism.<span class="authors">Hou YC, Evenson MJ, Corliss MM, et al., Carpentieri DF, et al. Genet Med. 2023;25(3):100348.</span></div></div>
+            <div class="pub-item"><div class="py">2022</div><div class="pt">Mosaic RAS in-frame insertion variants in patients with hemangiomas and vascular malformations.<span class="authors">Hou YC, Evenson MJ, Corliss MM, et al. ACMG Annual Meeting.</span></div></div>
+            <div class="pub-item"><div class="py">2025</div><div class="pt">ELM4::ALK fusion-positive lymphangioma.<span class="authors">Nourani M, Kothari A, Carpentieri D. ISSVA 2025 Debates &amp; Updates, Paris.</span></div></div>
+            <div class="pub-item"><div class="py">2001</div><div class="pt">A method for diagnosing pediatric soft tissue tumors based on differential localization of a WT1-associated molecule.<span class="authors">US Patent 32630301, filed 2001.</span></div></div>
+            <div class="pub-item"><div class="py">2026</div><div class="pt">Methods and systems for detection and functional inference of KMT pathway dysregulation in vascular anomalies.<span class="authors">Patent pending, filed April 2026.</span></div></div>
+          </div>
+        </div>
+
+        <div class="pub-group" id="pub-bio">
+          <div class="pub-list">
+            <div class="pub-item"><div class="py">2021</div><div class="pt">Mind the quality gap when banking on dry blood spots.<span class="authors">Carpentieri D, Colvard A, Petersen J, et al. Biopreserv Biobank. 2021;19(2):136-142.</span></div></div>
+            <div class="pub-item"><div class="py">2021</div><div class="pt">Special issue on biobanking for pediatric research.<span class="authors">Carpentieri D, Catchpoole D, Vercauteren S. Biopreserv Biobank. 2021;19(2):97.</span></div></div>
+            <div class="pub-item"><div class="py">2021</div><div class="pt">Cryopreservation of ovarian tissue for pediatric fertility.<span class="authors">Hinkle K, Orwig KE, Valli-Pulaski H, et al., Carpentieri D, Walsh A. Biopreserv Biobank. 2021;19(2):130-135.</span></div></div>
+            <div class="pub-item"><div class="py">2020</div><div class="pt">Pediatric biobanking: kids are not just little adults.<span class="authors">Catchpoole DR, Carpentieri D, Vercauteren S, et al. Biopreserv Biobank. 2020;18(4):258-265.</span></div></div>
+            <div class="pub-item"><div class="py">2012</div><div class="pt">2012 best practices for repositories: collection, storage, retrieval, and distribution of biological materials for research.<span class="authors">Campbell LD, Betsou F, Garcia DL, et al., Carpentieri D, et al. Biopreserv Biobank. 2012;10(2):79-161.</span></div></div>
+            <div class="pub-item"><div class="py">2014</div><div class="pt">Current trends in biobanking for rare diseases: a review.<span class="authors">Graham CE, Molster C, Baynam GS, et al., Carpentieri D, et al. J Biorepository Science for Applied Medicine. 2014;2:49-61.</span></div></div>
+          </div>
+        </div>
+
+        <div class="pub-group" id="pub-onco">
+          <div class="pub-list">
+            <div class="pub-item"><div class="py">2005</div><div class="pt">Protocol for the examination of specimens from pediatric and adult patients with Ewing sarcoma family tumors.<span class="authors">Carpentieri DF, Qualman SJ, Bowen J, Krausz T, Marchevsky A, Dickman PS; College of American Pathologists. Arch Pathol Lab Med. 2005;129(7):866-73.</span></div></div>
+            <div class="pub-item"><div class="py">2002</div><div class="pt">The expression of WT1 in the differentiation of rhabdomyosarcoma from other pediatric small round blue cell tumors.<span class="authors">Carpentieri DF, Nichols K, Chou PM, Matthews M, Pawel B, Huff D. Mod Pathol. 2002;15(10):1080-6.</span></div></div>
+            <div class="pub-item"><div class="py">2015</div><div class="pt">Lysinuric protein intolerance in a family of Mexican ancestry with a novel SLC7A7 gene deletion.<span class="authors">Carpentieri D, Barnhart MF, Aleck K, Miloh T, deMello D. Mol Genet Metab Rep. 2015;2:47-50.</span></div></div>
+            <div class="pub-item"><div class="py">2010</div><div class="pt">Intestinal spirochetosis in children: five new cases and a 20-year review of the literature.<span class="authors">Carpentieri DF, Souza-Morones S, Gardetto JS, et al. Pediatr Dev Pathol. 2010;13(6):471-5.</span></div></div>
+            <div class="pub-item"><div class="py">2003</div><div class="pt">Coincident expression of chemokine receptors CCR6 and CCR7 by pathologic Langerhans cells in Langerhans cell histiocytosis.<span class="authors">Fleming MD, Pinkus JL, Fournier MV, et al., Carpentieri DF, et al. Blood. 2003;101(7):2473-5.</span></div></div>
+            <div class="pub-item"><div class="py">2004</div><div class="pt">Favorable neuroblastoma genes and molecular therapeutics of neuroblastoma.<span class="authors">Tang XX, Robinson ME, Riceberg JS, et al., Carpentieri D, Ikegaki N. Clin Cancer Res. 2004;10(17):5837-44.</span></div></div>
+          </div>
+        </div>
+
+        <div class="pub-group" id="pub-spec">
+          <div class="pub-list">
+            <div class="pub-item"><div class="py">2024</div><div class="pt">On reactive ion etching of Parylene-C with simple photoresist mask for fabrication of high-porosity membranes to capture circulating and exfoliated tumor cells.<span class="authors">Rabadi I, Carpentieri D, Wang J, Zenhausern F, Gu J. Micromachines. 2024;15(4):521.</span></div></div>
+            <div class="pub-item"><div class="py">2020</div><div class="pt">Development of organ-on-chip and circulating tumor cell collection devices for cancer research.<span class="authors">Rabadi I, Akkad A, Sertil A, Hingaroni P, Carpentieri D, Gu J. 5th Annual ABRC-Flinn Research Conference.</span></div></div>
+            <div class="pub-item"><div class="py">2020</div><div class="pt">A new way of fabricating high-porosity parylene membranes for high-throughput capturing of viable circulating and exfoliated tumor cells from large-volume bodily fluids.<span class="authors">Gu J, Rabadi I, Zenhausern F, Carpentieri D, Wang J. AACR Special Conference on Advances in Liquid Biopsies. Clin Cancer Res. 2020;26(11 Suppl): B26.</span></div></div>
+            <div class="pub-item"><div class="py">2016</div><div class="pt">Evaluation of protein stability in dried plasma spots using targeted and untargeted mass spectrometry techniques.<span class="authors">Petritis K, David V, Garcia K, et al., Carpentieri D, Pirrotte P. NIH IMAT, Washington, DC.</span></div></div>
+            <div class="pub-item"><div class="py">2015</div><div class="pt">Development of a robust and reproducible protocol for the extraction of proteins from dried plasma spots for downstream proteomic applications.<span class="authors">David V, Tsantilas K, Rosenow M, et al., Carpentieri D, Petritis K, Pirrotte P. ISBER / US-HUPO Annual Meetings.</span></div></div>
+            <div class="pub-item"><div class="py">2018</div><div class="pt">Point-of-care mutation detection in rare genetic disorders.<span class="authors">Caplan MR, Carpentieri D, Shub M, et al. BMES Annual Meeting.</span></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="pub-more">Complete bibliography (90+ peer-reviewed articles, abstracts, and proceedings, 1997–present) available via <a href="https://orcid.org/0000-0003-4654-345X" target="_blank" rel="noopener">ORCID</a> and <a href="https://www.researchgate.net/profile/David-Carpentieri" target="_blank" rel="noopener">ResearchGate</a> (1,653 citations).</p>
+    </div>
+  </section>
+
+  <!-- GRANTS & HONORS -->
+  <section id="grants">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="tag">Funding &amp; Recognition</p>
+        <h2 class="display">Grants and honors</h2>
+      </div>
+      <div class="split reveal">
+        <div>
+          <h3 class="serif" style="font-size:20px;font-weight:600;margin-bottom:4px;">Awarded Grants &amp; Contracts</h3>
+          <div class="grant-item">
+            <div class="gy">2009 – 2018 · $1,835,860</div>
+            <h5>Arizona Biospecimen Locator / Phoenix Children's Biorepository (BMAP)</h5>
+            <div class="role">Principal Investigator (20%) · Arizona Biomedical Research Commission</div>
+          </div>
+          <div class="grant-item">
+            <div class="gy">2014 – 2018 · $871,295</div>
+            <h5>Preservation of Dried Plasma Spots for Downstream Proteomic Analysis</h5>
+            <div class="role">Principal Investigator (10%) · NIH R21</div>
+          </div>
+          <div class="grant-item">
+            <div class="gy">2021 – 2023 · $34,743</div>
+            <h5>Dynamics of Serological Responses to SARS-CoV-2: Longitudinal Sero-surveillance and Sero-Protection Studies</h5>
+            <div class="role">Site Principal Investigator (5%) · National Institutes of Health</div>
+          </div>
+          <div class="grant-item">
+            <div class="gy">2017 – 2019 · $80,000</div>
+            <h5>Modeling Pulmonary Micrometastasis of Osteosarcoma in Real Time on Chip</h5>
+            <div class="role">Co-Principal Investigator (5%) · Valley Research Partnership Award, University of Arizona</div>
+          </div>
+          <div class="grant-item" style="border-bottom:none;">
+            <div class="gy">2006 · $35,000</div>
+            <h5>Proteomic Profiling of Pediatric Brain Tumors</h5>
+            <div class="role">Principal Investigator (5%) · Phoenix Children's Hospital Circle Grant</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="serif" style="font-size:20px;font-weight:600;margin-bottom:4px;">Honors &amp; Awards</h3>
+          <div class="honor-item"><span>Best Doctors in America</span><span class="hy">2025</span></div>
+          <div class="honor-item"><span>Best Doctors in Arizona</span><span class="hy">2025</span></div>
+          <div class="honor-item"><span>Visiting Professorship, Vascular Anomalies — Boston Children's Hospital</span><span class="hy">2025</span></div>
+          <div class="honor-item"><span>Best Doctors in America</span><span class="hy">2010–14</span></div>
+          <div class="honor-item"><span>Young Investigator Program Awardee — Children's Oncology Program (mentor: Dr. H. Shimada)</span><span class="hy">2003</span></div>
+          <h3 class="serif" style="font-size:20px;font-weight:600;margin:36px 0 4px;">Currently Submitted</h3>
+          <div class="honor-item"><span>Congenital Conditions Affecting Reproductive Development (VSD-TRN) — NIH, $5,000,000</span><span class="hy">2024/25</span></div>
+          <div class="honor-item"><span>Evaluation of ASPH as a Biomarker in Melanoma — ABRC, $700,000</span><span class="hy">2024</span></div>
+          <div class="honor-item"><span>ASPH as a Target for the Treatment of Sarcomas — Sarcoma Foundation, $60,000</span><span class="hy">2025</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section class="alt" id="service">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="tag">Professional Service</p>
+        <h2 class="display">Editorial, advisory, and society roles</h2>
+        <p>A selection from three decades of continuous committee, editorial, and reviewer service.</p>
+      </div>
+      <div class="service-cols reveal">
+        <ul>
+          <li><span class="sy">2025–</span>Reviewer, Journal of Pediatric Hematology and Oncology</li>
+          <li><span class="sy">2025–</span>Chair, External Advisory Committee, TRANSCEND</li>
+          <li><span class="sy">2024–</span>Pathology Committee, ISSVA</li>
+          <li><span class="sy">2023–</span>Pathology Committee, VSD-TRN</li>
+          <li><span class="sy">2023–</span>Reviewer, Pediatrics</li>
+          <li><span class="sy">2023–</span>External Scientific Panel, dGTEx</li>
+          <li><span class="sy">2020–</span>Editorial Board Member, Pediatric Medicine</li>
+        </ul>
+        <ul>
+          <li><span class="sy">2018–23</span>Chair, External Advisory Committee, DaCCoTA</li>
+          <li><span class="sy">2017–</span>Grant Reviewer, NIH Population Sciences &amp; Epidemiology</li>
+          <li><span class="sy">2017–</span>Grant Reviewer, National Institute of Allergy and Infectious Diseases</li>
+          <li><span class="sy">2015–</span>Grant Reviewer, NHLBI Biologic Specimen Repository</li>
+          <li><span class="sy">2011–15</span>Founder &amp; Chair, ISBER Rare Diseases Working Group</li>
+          <li><span class="sy">2010–17</span>Chair (and Secretary, Chair-elect, Past-Chair), AACC Pediatric &amp; Maternal-Fetal Division</li>
+          <li><span class="sy">2009–18</span>Board Member, Arizona Biospecimen Consortium</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENTORING -->
+  <section id="mentoring">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="tag">Teaching &amp; Mentoring</p>
+        <h2 class="display">A Socratic approach to rare disease</h2>
+      </div>
+      <div class="quote-block reveal">
+        <p>"Nature is nowhere accustomed more openly to display her secret mysteries than in cases where she shows traces of her workings apart from the beaten path."</p>
+        <cite>— William Harvey, 1657. The guiding text for Dr. Carpentieri's teaching philosophy: leading students to uncover the mysteries of a clinical diagnosis themselves.</cite>
+      </div>
+      <div class="mentee-grid reveal">
+        <div class="mentee"><div class="name">Danielle Brister</div><div class="out">ASU Barrett Honors, metabolomics thesis → Fulbright Fellow, Taiwan &amp; UK</div></div>
+        <div class="mentee"><div class="name">Hawley Helmbrecht</div><div class="out">ASU Biomedical Engineering thesis → Postdoctoral researcher, Johns Hopkins</div></div>
+        <div class="mentee"><div class="name">Alexander Carpentieri</div><div class="out">ASU Biomedical Engineering thesis → Software engineer, Blizzard Entertainment</div></div>
+        <div class="mentee"><div class="name">Sydney Connor</div><div class="out">ASU Barrett Honors thesis → Biomedical Engineering, Johns Hopkins</div></div>
+        <div class="mentee"><div class="name">Jordan Todd</div><div class="out">ASU Barrett Honors thesis → Development Engineer, W.L. Gore &amp; Associates</div></div>
+        <div class="mentee"><div class="name">Logan Taysom</div><div class="out">ASU Barrett Honors thesis → Anesthesiology, University of Arizona</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="display">Get in touch</h2>
+      <p>For research collaboration, editorial or advisory inquiries, speaking engagements, or Ven, LLC business development, reach out directly.</p>
+      <a class="btn" href="mailto:carpentieridavid@gmail.com">Send an email ↗</a>
+    </div>
+    <div>
+      <ul class="contact-links">
+        <li><span class="lbl">Primary Email</span><a href="mailto:dcarpentieri@phoenixchildrens.com">dcarpentieri@phoenixchildrens.com</a></li>
+        <li><span class="lbl">Academic Email</span><a href="mailto:dcarpent@arizona.edu">dcarpent@arizona.edu</a></li>
+        <li><span class="lbl">ORCID</span><a href="https://orcid.org/0000-0003-4654-345X" target="_blank" rel="noopener">0000-0003-4654-345X</a></li>
+        <li><span class="lbl">ResearchGate</span><a href="https://www.researchgate.net/profile/David-Carpentieri" target="_blank" rel="noopener">David-Carpentieri</a></li>
+        <li><span class="lbl">LinkedIn</span><a href="https://www.linkedin.com/in/davidcarpentieri/" target="_blank" rel="noopener">davidcarpentieri</a></li>
+        <li><span class="lbl">University Directory</span><a href="https://phoenixmed.arizona.edu/directory/carpentieri-david" target="_blank" rel="noopener">University of Arizona College of Medicine – Phoenix</a></li>
+        <li><span class="lbl">Institution</span>Phoenix Children's — Division of Pathology and Laboratory Medicine, 1919 East Thomas Road, Phoenix, AZ 85016</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 David F. Carpentieri, MD</span>
+    <span>Site built from curriculum vitae dated November 6, 2025</span>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if(toggle){
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
+  // reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12});
+    reveals.forEach(r => io.observe(r));
+  } else {
+    reveals.forEach(r => r.classList.add('in'));
+  }
+
+  // publication tabs
+  const tabs = document.querySelectorAll('.pub-tab');
+  const groups = document.querySelectorAll('.pub-group');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      groups.forEach(g => g.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('pub-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
