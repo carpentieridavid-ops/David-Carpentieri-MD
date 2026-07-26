@@ -124,12 +124,15 @@
   .hero-meta strong{color:var(--ink); font-weight:600;}
 
   /* signature svg banner */
-  .signature-band{margin-top:56px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .signature-band svg{width:100%; height:auto; display:block;}
-  .signature-caption{
-    display:flex; justify-content:space-between; padding:10px 0 0;
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft);
+  .signature-band{margin-top:56px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:28px 0;}
+  .figure-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line);}
+  .figure-frame{background:var(--paper); padding:20px 22px 16px; margin:0;}
+  .figure-frame img{width:100%; height:auto; display:block; border:1px solid var(--line);}
+  .figure-frame figcaption{
+    margin-top:12px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-soft); text-align:center;
   }
+  @media (max-width:760px){ .figure-grid{grid-template-columns:1fr;} }
 
   /* stat chips */
   .stats{
@@ -309,34 +312,15 @@
       </div>
 
       <div class="signature-band reveal">
-        <svg viewBox="0 0 1200 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration transitioning from a stained tissue section into a Raman spectral trace">
-          <defs>
-            <clipPath id="clipL"><rect x="0" y="0" width="600" height="220"/></clipPath>
-          </defs>
-          <rect x="0" y="0" width="1200" height="220" fill="none"/>
-          <!-- left: stained tissue swirls -->
-          <g clip-path="url(#clipL)" opacity="0.9">
-            <circle cx="60" cy="60" r="46" fill="var(--hema)" opacity="0.18"/>
-            <circle cx="150" cy="140" r="60" fill="var(--eosin)" opacity="0.22"/>
-            <circle cx="260" cy="50" r="34" fill="var(--hema)" opacity="0.28"/>
-            <circle cx="330" cy="150" r="50" fill="var(--eosin)" opacity="0.18"/>
-            <circle cx="420" cy="70" r="40" fill="var(--hema)" opacity="0.22"/>
-            <circle cx="480" cy="160" r="30" fill="var(--eosin)" opacity="0.26"/>
-            <circle cx="90" cy="180" r="22" fill="var(--hema)" opacity="0.2"/>
-            <circle cx="230" cy="180" r="16" fill="var(--hema-deep)" opacity="0.3"/>
-            <circle cx="360" cy="40" r="18" fill="var(--eosin-deep)" opacity="0.3"/>
-            <circle cx="520" cy="90" r="20" fill="var(--hema-deep)" opacity="0.25"/>
-          </g>
-          <!-- divider -->
-          <line x1="600" y1="0" x2="600" y2="220" stroke="var(--line-strong)" stroke-width="1"/>
-          <!-- right: raman spectral trace -->
-          <polyline points="610,170 640,168 660,169 675,120 685,60 695,120 705,166 730,164 745,110 752,40 759,110 775,163 800,160 815,90 822,20 829,90 845,158 870,155 895,153 905,95 912,30 919,95 930,150 960,148 985,146 995,100 1002,45 1009,100 1020,144 1060,141 1090,139 1120,137 1150,136 1190,135"
-            fill="none" stroke="var(--hema)" stroke-width="2.5" />
-          <line x1="605" y1="180" x2="1195" y2="180" stroke="var(--line-strong)" stroke-width="1"/>
-        </svg>
-        <div class="signature-caption wrap" style="padding-left:0;padding-right:0;">
-          <span>Fig. 1 — H&amp;E stained section</span>
-          <span>Raman spectral trace, SERS platform</span>
+        <div class="figure-grid">
+          <figure class="figure-frame">
+            <img src="biobanking-infographic.png" alt="Infographic illustrating the biobanking workflow from sample collection through processing, cataloging, storage, and controlled access" loading="lazy">
+            <figcaption>Fig. 1 — Biobanking: sample to preservation</figcaption>
+          </figure>
+          <figure class="figure-frame">
+            <img src="raman-spectroscopy-infographic.png" alt="Infographic illustrating the principles of Raman spectroscopy and a representative Raman spectrum" loading="lazy">
+            <figcaption>Fig. 2 — Raman spectroscopy: principle &amp; spectral signature</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -354,7 +338,7 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="reveal">
-          <p class="lede">Trained in São Paulo, Miami, and Philadelphia, and in practice in Phoenix for over two decades, Dr. Carpentieri has built a career at the intersection of diagnosis, discovery, and invention.</p>
+          <p class="lede">Trained in São Paulo, Miami, and Philadelphia, and practicing in Phoenix for over two decades, Dr. Carpentieri has built a career at the intersection of diagnosis, translational research and invention.</p>
           <p>He completed medical school at the Faculdade de Ciências Médicas da Santa Casa in São Paulo, trained in pediatrics at Jackson Memorial Hospital in Miami, and pursued pathology residency at The Lankenau Hospital before a fellowship in pediatric pathology at The Children's Hospital of Philadelphia. He is board-certified by the American Board of Pathology in both Anatomic &amp; Clinical Pathology and Pediatric Pathology.</p>
           <p>Since 2002 he has served as Laboratory Co-Founder and Associate Pathologist at Phoenix Children's, where his roles have spanned laboratory directorship, biorepository medical direction, and section leadership across chemistry, immunology, microbiology, and point-of-care testing. In parallel, he holds academic appointments at the University of Arizona College of Medicine – Phoenix, Mayo Clinic Alix School of Medicine – Scottsdale, and Creighton University Medical Center, and has an intermittent consulting appointment in Dublin, Ireland.</p>
           <p>His research has moved from rhabdomyosarcoma and Ewing sarcoma pathology, through pediatric biorepository science and dried-plasma-spot proteomics, to his current focus on the molecular and epigenetic drivers of vascular anomalies — and, through Spectrum, LLC and Ven, LLC, into Raman-spectroscopy-based diagnostic devices.</p>

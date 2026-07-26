@@ -11,6 +11,8 @@ static HTML file — no build step, no dependencies beyond Google Fonts.
 
 - `index.html` — the entire site (structure, styles, and behavior in one file)
 - `david-carpentieri.jpg` — portrait used in the About section
+- `biobanking-infographic.png` — biobanking workflow figure used in the hero section
+- `raman-spectroscopy-infographic.png` — Raman spectroscopy principle figure used in the hero section
 
 ## Running it locally
 
@@ -32,7 +34,7 @@ No build tools required. Either:
 
    ```bash
    git init
-   git add index.html README.md david-carpentieri.jpg
+   git add index.html README.md david-carpentieri.jpg biobanking-infographic.png raman-spectroscopy-infographic.png
    git commit -m "Initial site"
    git branch -M main
    git remote add origin https://github.com/<your-username>/<repo-name>.git
