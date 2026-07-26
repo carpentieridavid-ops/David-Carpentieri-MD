@@ -10,7 +10,7 @@ static HTML file — no build step, no dependencies beyond Google Fonts.
 ## Contents
 
 - `index.html` — the entire site (structure, styles, and behavior in one file)
-- `images/david-carpentieri.jpg` — portrait used in the About section
+- `david-carpentieri.jpg` — portrait used in the About section
 
 ## Running it locally
 
@@ -32,7 +32,7 @@ No build tools required. Either:
 
    ```bash
    git init
-   git add index.html README.md images
+   git add index.html README.md david-carpentieri.jpg
    git commit -m "Initial site"
    git branch -M main
    git remote add origin https://github.com/<your-username>/<repo-name>.git
